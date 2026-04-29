@@ -1,0 +1,17 @@
+name: System Health Checker CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run Health Checker Script
+        run: bash health.sh
